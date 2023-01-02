@@ -1,0 +1,3 @@
+Copy project files to this folder
+
+Copy all from "flutter_app_PROJECT_FILES" folder 
