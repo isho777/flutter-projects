@@ -1,0 +1,50 @@
+1. Run Windows commamnd prompt 
+CD to "platform-tools" folder on command prompt
+type: .\adb devices  to see list of virtiual devices connected
+
+If no device shows up 
+Go to the virtual device settings (on the device) and allow USB debugging 
+Also allow developer ability in the Builder settings
+ 
+2. type: adb shell      to open shell screen  (control-D  to exit the shell)
+   type: pm list packages -f  to see list of installed packages on the device
+   type: pm grant -g com.alexzh.mapnotes   to grant all permision to the specified app or package 
+   type: adb install -g    to grant all access to su
+   type: pm grant com.franco.doze android.permission.DUMP    to grant specific app   to specific permission
+
+---------------------------------
+
+  USE ONLY THE VIRTUAL DEVICES NOT FROM GOOGLE PLAY (are not rooted)
+
+Run terminal commands In VSCODE 
+
+  > open Terminal tab
+  > type:  .\adb root 
+
+e.g. 
+  PS C:\users\Administrator\Desktop\platform-tools> .\adb root
+
+Then  
+  PS C:\users\Administrator\Desktop\platform-tools> .\adb shell
+
+Ensure the command opens with a prompt #  and not $  
+ #   ... engineer binary
+    e.g. generic_x86:/ #
+
+Also create a text file as below if Emulator cant use Chrome app.....
+     C:\users\administrator\.android\anvancedFeatures.ini
+it must contain the following lines...
+     Vulkan = off
+     GLDirectMem = on
+Restart Emulator....
+
+Then you can interact with the device applications 
+
+
+
+ 
+
+
+cd C:\users\Administrator\Desktop\platform-tools\
+
+.\adb push "C:\Users\Administrator\Downloads\file_example_MP3_700KB.mp3"  "/data/user/0/com.example.scheduled_audio_player/app_flutteraudio_scheduler_db2.db"
